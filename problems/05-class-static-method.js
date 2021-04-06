@@ -75,15 +75,25 @@ class MMS {
 
   static getMessagesByMIMEType(messages, mimeType) {
     return messages.filter(function(message) {
+      console.log("this is" + this);
       return message.mimeType === mimeType
-      // return this.mimeType === message
+      // return this.mimeType === message <-- this does not work!
     })
   }
 }
 
-messageObj = {recipient: 'Joe', sender: 'Wilson', text: 'hello', mimeType: 'txt/SMS' }
+// const instance1 = new MMS('555-111-1111', '555-222-2222',
+//   'This is a test message.', 'image/gif');
+// const instance2 = new MMS('555-111-1111', '555-222-2222',
+//   'This is a second test message.', 'image/gif');
+// const instance3 = new MMS('555-111-1111', '555-222-2222',
+//   'This is a third test message.', 'image/jpeg');
 
-messageObj.mimeType
+// const messages = [instance1, instance2, instance3];
+// const filteredMessages = MMS.getMessagesByMIMEType(messages, 'image/gif');
+
+// console.log(filteredMessages);
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
