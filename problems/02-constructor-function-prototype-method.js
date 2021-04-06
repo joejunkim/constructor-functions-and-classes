@@ -63,6 +63,9 @@ function Email(recipient, sender, subject, text) {
   this.text = text;
 }
 
+Email.prototype.getSubjectAndText = function() {
+  return `${this.subject}: ${this.text}`
+}
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

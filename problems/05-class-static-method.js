@@ -22,11 +22,11 @@ Node.js with the examples below. Use the command:
 
 Example:
 
-const instance1 = new MMS('555-111-1111', '555-222-2222', 
+const instance1 = new MMS('555-111-1111', '555-222-2222',
   'This is a test message.', 'image/gif');
-const instance2 = new MMS('555-111-1111', '555-222-2222', 
+const instance2 = new MMS('555-111-1111', '555-222-2222',
   'This is a second test message.', 'image/gif');
-const instance3 = new MMS('555-111-1111', '555-222-2222', 
+const instance3 = new MMS('555-111-1111', '555-222-2222',
   'This is a third test message.', 'image/jpeg');
 
 const messages = [instance1, instance2, instance3];
@@ -51,6 +51,18 @@ console.log(filteredMessages);
 //   }
 // ]
 
+Add a static method to the provided `MMS` class. The method should be named
+`getMessagesByMIMEType()` and define the following parameters:
+
+* messages - an array containing instances of the `MMS` class
+* mimeType - a MIME type (see
+  https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
+  for more information)
+
+The `messages` parameter value is an array of `MMS` class instances. Find the
+instances whose `mimeType` property values match the provided `mimeType`
+parameter value. Return the matching instances in a new array.
+
 ***********************************************************************/
 
 class MMS {
@@ -59,6 +71,10 @@ class MMS {
     this.sender = sender;
     this.text = text;
     this.mimeType = mimeType;
+  }
+
+  static getMessagesByMIMEType(messages, mimeType) {
+    return messages.filter(function(message))
   }
 }
 
