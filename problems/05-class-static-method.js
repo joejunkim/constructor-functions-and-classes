@@ -70,13 +70,20 @@ class MMS {
     this.recipient = recipient;
     this.sender = sender;
     this.text = text;
-    this.mimeType = mimeType;
+    this.mimeType = mimeType; // = 'text/SMS'
   }
 
   static getMessagesByMIMEType(messages, mimeType) {
-    return messages.filter(function(message))
+    return messages.filter(function(message) {
+      return message.mimeType === mimeType
+      // return this.mimeType === message
+    })
   }
 }
+
+messageObj = {recipient: 'Joe', sender: 'Wilson', text: 'hello', mimeType: 'txt/SMS' }
+
+messageObj.mimeType
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
