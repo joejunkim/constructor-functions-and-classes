@@ -34,14 +34,21 @@ console.log(message2);
 // Should print...
 
 // SMS {
-//   recipient: '555-333-3333',
-//   sender: '555-444-4444',
-//   text: 'Test message two'
-// }
+  //   recipient: '555-333-3333',
+  //   sender: '555-444-4444',
+  //   text: 'Test message two'
+  // }
 
-***********************************************************************/
+  ***********************************************************************/
 
+ function SMS(recipient, sender, text) {
+   this.recipient = recipient;
+   this.sender = sender;
+   this.text = text;
+  }
 
+  const message2 = new SMS('555-333-3333', '555-444-4444', 'Test message two');
+  console.log(message2);
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
